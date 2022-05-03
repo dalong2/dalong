@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('eaa8d9c69fa5d32f003ba262d7d76150');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '김차겸♡김다현',
+        description: '6월5일 1시 저희 결혼합니다.',
+        imageUrl:
+          'http://mcard.itscard.co.kr/userdata/202205/c_th_01211934912.jpg',
+        link: {
+          mobileWebUrl: 'https://mcard.itscard.co.kr/dahyun805',
+          webUrl: 'https://mcard.itscard.co.kr/dahyun805',
+        },
+      },
+      social: {
+        likeCount: 0, //99999가 최대입니다
+        commentCount: 0, //99999가 최대입니다
+        sharedCount: 0, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '모바일 청첩장 보기',
+          link: {
+            mobileWebUrl: 'https://mcard.itscard.co.kr/dahyun805',
+            webUrl: 'https://mcard.itscard.co.kr/dahyun805',
+              buttons: [
+        {
+          title: '결혼식 참역 여부 알려주기',
+          link: {
+            mobileWebUrl: 'https://naver.me/5vMtZ65b',
+            webUrl: 'https://naver.me/5vMtZ65b',
+          },
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
